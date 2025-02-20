@@ -56,6 +56,10 @@
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
 
+.dark-mode .playlist-card {
+  background-color: #c0c3c4 !important;
+}
+
 /* Añade esto a tu App.css */
 
 .map-section {

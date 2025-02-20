@@ -64,8 +64,8 @@ const CommunitySection = ({ language }) => {
   return (
     <section id="community" className="youtube-community-section container py-5">
       <div className="row justify-content-center">
-        <div className="col-lg-8 text-center mt-3" data-aos="fade-up">
-          <div className="d-flex justify-content-center align-items-center position-relative">
+        <div className="col-lg-8 text-center mt-3 playlist-card" data-aos="fade-up">
+          <div className="d-flex justify-content-center align-items-center position-relative playlist-card">
             <FaYoutube className="youtube-icon-hero" />
             <button 
               className="btn btn-contact position-absolute" 
@@ -109,7 +109,7 @@ const CommunitySection = ({ language }) => {
               <div className="row">
                 {t.section4.benefits.map((benefit, index) => (
                   <div key={index} className="col-md-6 benefit-item" data-aos="fade-up" data-aos-delay={index * 100}>
-                    <div className="benefit-card">
+                    <div className="benefit-card playlist-card">
                       <FaYoutube className="benefit-icon" />
                       <p className="benefit-text">{benefit}</p>
                     </div>

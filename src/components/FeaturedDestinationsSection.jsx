@@ -111,7 +111,7 @@ export const FeaturedDestinationsSection = ({ language }) => {
       <section id="playlist" className="container d-flex align-items-center min-vh-100 bg-light">
         <div className="row g-4 mt-5">        
           {/* Playlist destacada */}
-          <div className="col-lg-8 d-flex flex-column mt-5" data-aos="fade-down">
+          <div className="col-lg-8 d-flex flex-column mt-5 style-column" data-aos="fade-down">
             <div className="card playlist-card">
               <div className="card-body">
                 <h5 className="card-title-playlist">{t.playlist.title}</h5>
