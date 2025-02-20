@@ -74,13 +74,13 @@ const ContactForm = ({ language }) => {
   const formRef = useRef(null);
 
   const sendEmail = (e) => {
-    e.preventDefault(); // Evita el refresco de la página
+    e.preventDefault();
   
     emailjs.sendForm(
-      'service_6wxs1pt',   // Reemplázalo con tu Service ID
-      'template_t1egspu',  // Reemplázalo con tu Template ID
+      'service_6wxs1pt',
+      'template_t1egspu',
       formRef.current,
-      'deQ8LIjzglGZDYhFR' // Reemplázalo con tu Clave Pública
+      'deQ8LIjzglGZDYhFR'
     )
     .then(() => {
       alert("Mensaje enviado correctamente ✅");
@@ -92,28 +92,20 @@ const ContactForm = ({ language }) => {
     });
   };
 
-        useEffect(() => {
-          AOS.init({
-            duration: 3000,
-            once: false, // Esto hace que las animaciones se activen cada vez que se hace scroll
-          });
-        }, []);
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: false,
+    });
+  }, []);
 
   const handleBackClick = () => {
-    window.location.href = "/"; // Redirige al inicio
+    window.location.href = "/";
   };
-
-  // Función para compartir en YouTube
-const shareYoutube = () => {
-  // YouTube tampoco tiene una API directa para compartir contenido
-  alert('YouTube no permite compartir contenido externo directamente.' +
-        '\nPuedes compartir el enlace en la descripción de tus videos.');
-};
 
   return (
     <section id="contact" className="container py-5 bg-light">
       <div className="row">
-        {/* Formulario de Contacto - Ocupa 8 columnas en pantallas grandes */}
         <div className="col-lg-8 mt-5" data-aos="fade-up">
           <h2 className="text-center-contact mb-4">{t.contact}</h2>
           <form ref={formRef} onSubmit={sendEmail} className="mt-4">
@@ -131,13 +123,11 @@ const shareYoutube = () => {
             </div>
             <button type="submit" className="btn btn-contact w-100">{t.send}</button>
           </form>
-          {/* Contenedor para el botón */}
           <div className="mt-3">
             <button className="btn btn-contact" onClick={handleBackClick}>
             {t.back}
             </button>
           </div>
-          {/* Enlace a WhatsApp */}
           <div className="mt-3">
               <div className="d-flex justify-content-end">
                 <a 
@@ -155,7 +145,6 @@ const shareYoutube = () => {
                 </a>
               </div>
           </div>
-          {/* Compartir Redes Sociales */}
           <div className="row mt-4">
             <div className="col-lg-10 mx-auto">
               <div className="social-share mt-4">
@@ -175,20 +164,21 @@ const shareYoutube = () => {
                   >
                     <FaInstagram className="me-1" /> {t.social.share}
                   </button>
-                  <button 
-                    className="btn btn-outline-contact btn-sm" 
+                  <a 
+                    href="https://www.youtube.com/@YrsaBello" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn btn-outline-contact btn-sm"
                     aria-label={t.social.shareYoutube}
-                    onClick={shareYoutube}
                   >
                     <FaYoutube className="me-1" /> {t.social.share}
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Aside con Cards - Ocupa 4 columnas en pantallas grandes */}
         <aside className="col-lg-4 d-flex flex-column mt-4">
           <div className="card mb-3">
             <div className="card-body">
