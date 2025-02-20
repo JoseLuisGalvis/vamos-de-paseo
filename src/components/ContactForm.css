@@ -1,0 +1,28 @@
+.back-button-container {
+  padding-left: 0;
+}
+
+.text-center-contact {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.btn-contact {
+  background-color: var(--accent-dark);
+  color: var(--blanco);
+}
+
+.btn-contact:hover {
+  background-color: var(--accent-light);
+  color: var(--blanco);
+}
+
+.btn-outline-contact {
+  border: 2px solid var(--accent-dark);
+  color: var(--accent-dark);
+}
+
+.btn-outline-contact:hover {
+  background-color: var(--accent-dark);
+  color: var(--blanco);
+}

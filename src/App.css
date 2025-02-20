@@ -1,0 +1,76 @@
+.app-container {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.dark-mode .navbar {
+  background-color: #343a40;
+}
+
+.dark-mode .navbar-title,
+.dark-mode .section-subtitle {
+  color: #ffffff;
+  text-shadow: 0 1px 2px #000, 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+.dark-mode .btn {
+  background-color: #495057;
+  border-color: #495057;
+  color: #ffffff;
+}
+
+.dark-mode .btn-secondary {
+  background-color: #495057;
+  border-color: #495057;
+  color: #ffffff;
+}
+
+.dark-mode .dropdown-menu {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.dark-mode .dropdown-item {
+  color: #ffffff;
+}
+
+.dark-mode .bg-light {
+  background-color: #343a40 !important;
+  color: #ffffff !important;
+}
+.dark-mode .benefit-text {
+  color: #000;
+  font-weight: 300;
+}
+
+.dark-mode .map-title {
+  color: #000 !important;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Añade esto a tu App.css */
+
+.map-section {
+  width: 100%;
+  height: 100%;
+  padding-top: 10em 0 !important;
+  position: relative;
+  margin-top: 10em !important;
+}
+
+/* Añade estos estilos a tu archivo CSS */
+.leaflet-top {
+  top: 10em !important;
+}
+
+.leaflet-container {
+  z-index: 1;
+}

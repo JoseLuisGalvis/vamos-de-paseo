@@ -1,0 +1,6 @@
+.card-title-playlist,
+.video-stats-playlist,
+.card-link-playlist {
+  color: var(--accent-dark);
+  font-weight: 600;
+}

@@ -1,0 +1,19 @@
+/* index.css */
+:root {
+  --primary-light: #a78bfa;
+  --primary-dark: #5b21b6;
+  --accent-light: #f8a8b4;
+  --accent-dark: #c2185b;
+  --neutral-light: #f5f5f5;
+  --neutral-dark: #333333;
+  --blanco: #ffffff;
+  --negro: #000000;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

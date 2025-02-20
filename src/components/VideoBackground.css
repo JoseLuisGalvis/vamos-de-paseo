@@ -1,0 +1,101 @@
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Ajuste según necesidad */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Oscurece un poco el video */
+  padding-left: 3em;
+}
+
+.video-title-video {
+  color: #fff;
+  font-size: 3em !important;
+  text-align: left;
+  text-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-top: -100px;
+  z-index: 2;
+}
+
+.youtube-link {
+  position: absolute;
+  top: 100px;
+  right: 45px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 5px;
+  z-index: 3;
+}
+
+.youtube-link a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.youtube-link a:hover {
+  color: var(--accent-dark);
+}
+
+/* Añade estos estilos a tu archivo VideoBackground.css */
+
+.author-attribution {
+  position: absolute;
+  bottom: 2em;
+  left: 2em;
+  z-index: 10;
+}
+
+.author-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.author-info {
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.author-attribution:hover .author-info {
+  opacity: 1;
+  transform: translateY(0);
+}

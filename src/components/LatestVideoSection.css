@@ -1,0 +1,31 @@
+.video-title {
+  font-size: 1em;
+}
+
+.section-title-latest {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.section-description {
+  text-align: justify;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.image-latest {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 1em;
+}
+
+.image-latest:hover {
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+  transform: translateZ(50px); /* Movimiento en el eje Z */
+}
