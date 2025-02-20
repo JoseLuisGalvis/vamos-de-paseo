@@ -4,8 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaYoutube } from 'react-icons/fa';
 import './CommunitySection.css';
-import aviso1 from '../assets/images/publicidad1.jpg';
-import aviso2 from '../assets/images/publicidad2.jpg';
+import aviso1 from '../assets/images/EspacioDisponible.png';
 
 const translations = {
   es: {
@@ -135,7 +134,7 @@ const CommunitySection = ({ language }) => {
             <div className="card ad-card">
               <div className="card-body p-0">
                 <img 
-                  src={aviso2} 
+                  src={aviso1} 
                   alt="Publicidad" 
                   className="img-fluid ad-image"
                   onError={(e) => {

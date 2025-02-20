@@ -5,8 +5,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import yb from '../assets/images/yb.jpeg';
 import './AboutSection.css';
-import aviso1 from '../assets/images/publicidad1.jpg';
-import aviso2 from '../assets/images/publicidad2.jpg';
+import aviso1 from '../assets/images/EspacioDisponible.png';
+
 
 const translations = {
   es: {
@@ -140,7 +140,7 @@ export const AboutSection = ({ language }) => {
           <div className="card min-vh-50">
             <div className="card-body">
               <img
-                src={aviso2}
+                src={aviso1}
                 alt="Yrsa Bello"
                 className="img-fluid image-latest"
                 onError={(e) => {

@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 import "./ContactForm.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import aviso1 from '../assets/images/publicidad1.jpg';
-import aviso2 from '../assets/images/publicidad2.jpg';
+import aviso1 from '../assets/images/EspacioDisponible.png';
+import ws from '../assets/images/ws.png';
+
 import { FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const translations = {
@@ -136,7 +137,24 @@ const shareYoutube = () => {
             {t.back}
             </button>
           </div>
-          
+          {/* Enlace a WhatsApp */}
+          <div className="mt-3">
+              <div className="d-flex justify-content-end">
+                <a 
+                  href="https://chat.whatsapp.com/CeJmHyJRNBoL54sBYXCCeY" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-contact d-flex align-items-center gap-2"
+                >
+                  <img 
+                    src={ws}
+                    alt="WhatsApp" 
+                    style={{ width: '24px', height: '24px' }}
+                  />
+                  {t.contact}
+                </a>
+              </div>
+          </div>
           {/* Compartir Redes Sociales */}
           <div className="row mt-4">
             <div className="col-lg-10 mx-auto">
@@ -189,7 +207,7 @@ const shareYoutube = () => {
           <div className="card mb-3">
             <div className="card-body">
               <img
-                src={aviso2}
+                src={aviso1}
                 alt="Yrsa Bello"
                 className="img-fluid image-latest"
                 onError={(e) => {
