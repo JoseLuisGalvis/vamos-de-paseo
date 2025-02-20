@@ -14,12 +14,14 @@ const translations = {
       subtitle: "Vamos de Paseo con Yrsa Bello",
       description: "Descubre nuevos lugares, culturas y experiencias a través de los ojos de Yrsa Bello. Nuestro canal está dedicado a compartir aventuras auténticas, consejos de viaje y mostrar la belleza de destinos únicos alrededor del mundo.",
       buttonText: "Ver más videos",
+    
     },
     section2: {
       title: "Último Video",
       subtitle: "Mantente al día con nuestras aventuras",
       description: "No te pierdas nuestro contenido más reciente. Suscríbete a nuestro canal para recibir notificaciones de nuevos videos cada semana.",
       buttonText: "Suscríbete",
+      back: "Volver al Inicio",
     },
     playlist: {
       title: "Playlist Destacada",
@@ -52,12 +54,14 @@ const translations = {
       subtitle: "Let's Go for a Walk with Yrsa Bello",
       description: "Discover new places, cultures, and experiences through Yrsa Bello's eyes. Our channel is dedicated to sharing authentic adventures, travel tips, and showcasing the beauty of unique destinations around the world.",
       buttonText: "Watch more videos",
+
     },
     section2: {
       title: "Latest Video",
       subtitle: "Stay updated with our adventures",
       description: "Don't miss our latest content. Subscribe to our channel to receive notifications of new videos every week.",
       buttonText: "Subscribe",
+      back: "Back to Home",
     },
     playlist: {
       title: "Featured Playlist",
@@ -97,6 +101,10 @@ export const LatestVideoSection = ({ language }) => {
         once: false, // Esto hace que las animaciones se activen cada vez que se hace scroll
       });
     }, []);
+
+    const handleBackClick = () => {
+      window.location.href = "/";
+    };
   
   return (
     <section id="latest-video" className="container d-flex align-items-center min-vh-100 bg-light">
@@ -130,16 +138,19 @@ export const LatestVideoSection = ({ language }) => {
                 href="https://www.youtube.com/@YrsaBello?sub_confirmation=1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-walk cta-button mt-3"
+                className="btn btn-walk cta-button mt-3 margin-right"
               >
                 {t.section2.buttonText} <FaYoutube className="icon" />
               </a>
-                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 mx-2" aria-label="Facebook">
-                          <FaFacebookF />
-                        </a>
-                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3" aria-label="Instagram">
-                          <FaInstagram />
-                        </a>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 margin-right" aria-label="Facebook">
+                <FaFacebookF />
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 margin-right" aria-label="Instagram">
+                <FaInstagram />
+              </a>
+              <button className="btn btn-contact mt-3" onClick={handleBackClick}>
+                {t.section2.back}
+              </button>
         </div>
 
         {/* Aside con Cards - Ocupa 4 columnas en pantallas grandes */}

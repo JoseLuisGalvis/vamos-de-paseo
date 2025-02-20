@@ -37,6 +37,24 @@
   color: var(--blanco);
 }
 
+.margin-right {
+  margin-right: 0.3em;
+}
+
+.margin .btn-contact {
+  background-color: var(--accent-dark) !important;
+  color: var(--blanco) !important;
+  padding: 0.4rem 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+}
+
+.btn-contact:hover {
+  background-color: var(--accent-light) !important;
+  color: var(--blanco) !important;
+}
+
 .btn-outline-walk {
   border: 2px solid var(--accent-dark); /* Usar var() para la variable */
   color: var(--accent-dark); /* Usar var() para la variable */

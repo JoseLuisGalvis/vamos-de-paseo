@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import 'react';
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import PropTypes from 'prop-types';
 import './FeaturedDestinationsSection.css'
 import AOS from 'aos';
@@ -26,7 +27,9 @@ const translations = {
       videoTitle: "Explorando el destino #${num}",
       views: "vistas",
       timeAgo: "hace 1 semana",
-      seeAllPlaylists: "Ver todas las playlists"
+      seeAllPlaylists: "Ver todas las playlists",
+      buttonText: "Suscríbete",
+      back: "Volver al Inicio",
     },
     section3: {
       title: "Destinos Destacados",
@@ -64,7 +67,9 @@ const translations = {
       videoTitle: "Exploring Destination #${num}",
       views: "views",
       timeAgo: "1 week ago",
-      seeAllPlaylists: "See all playlists"
+      seeAllPlaylists: "See all playlists",
+      buttonText: "Subscribe",
+      back: "Back to Home",
     },
     section3: {
       title: "Featured Destinations",
@@ -97,6 +102,10 @@ export const FeaturedDestinationsSection = ({ language }) => {
           once: false, // Esto hace que las animaciones se activen cada vez que se hace scroll
         });
       }, []);
+
+      const handleBackClick = () => {
+        window.location.href = "/";
+      };
   
   return (
       <section id="playlist" className="container d-flex align-items-center min-vh-100 bg-light">
@@ -105,14 +114,14 @@ export const FeaturedDestinationsSection = ({ language }) => {
           <div className="col-lg-8 d-flex flex-column mt-5" data-aos="fade-down">
             <div className="card playlist-card">
               <div className="card-body">
-                <h4 className="card-title-playlist">{t.playlist.title}</h4>
+                <h5 className="card-title-playlist">{t.playlist.title}</h5>
                 <ul className="video-list">
                   <li className="video-item">
                     <a href="https://www.youtube.com/watch?v=G8OMPvjBehg" className="video-link d-block">
                       <div className="video-thumbnail">
                         <iframe 
                           width="560" 
-                          height="315" 
+                          height="300" 
                           src="https://www.youtube.com/embed/G8OMPvjBehg?si=EcwCKB0XxmJYA-vR" 
                           title="YouTube video player" 
                           frameBorder="0" 
@@ -131,7 +140,7 @@ export const FeaturedDestinationsSection = ({ language }) => {
                       <div className="video-thumbnail">
                         <iframe 
                           width="560" 
-                          height="315"
+                          height="300"
                           src="https://www.youtube.com/embed/ESo9JA_LG6I?si=Zq3EekyvsWtU_U3J" 
                           title="YouTube video player" 
                           frameBorder="0" 
@@ -146,9 +155,26 @@ export const FeaturedDestinationsSection = ({ language }) => {
                     </a>
                   </li>
                 </ul>
-                <a href="https://www.youtube.com/@YrsaBello/playlists" className="card-link-playlist text-decoration-none">
+                <a href="https://www.youtube.com/@YrsaBello/playlists" className="card-link-playlist text-decoration-none margin-right">
                   {t.playlist.seeAllPlaylists}
                 </a>
+                <a
+                  href="https://www.youtube.com/@YrsaBello?sub_confirmation=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-walk cta-button margin-right"
+                >
+                  {t.playlist.buttonText} <FaYoutube className="icon" />
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk margin-right" aria-label="Facebook">
+                  <FaFacebookF />
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk margin-right" aria-label="Instagram">
+                  <FaInstagram />
+                </a>
+                <button className="btn btn-contact" onClick={handleBackClick}>
+                  {t.playlist.back}
+                </button>
               </div>
             </div>
           </div>

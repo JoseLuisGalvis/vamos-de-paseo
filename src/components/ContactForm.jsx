@@ -14,6 +14,10 @@ const translations = {
   es: {
     contact: "Contacto",
     name: "Nombre",
+    lastName: "Apellidos",
+    country: "País",
+    state: "Estado o Provincia",
+    municipality: "Municipio",
     email: "Correo Electrónico",
     message: "Mensaje",
     send: "Enviar",
@@ -38,10 +42,16 @@ const translations = {
       shareInstagram: "Compartir en Instagram",
       share: "Compartir",
     },
+    placeholderMessage:
+      "Por favor incluya el lugar que desea evaluemos para visitar o el mensaje con su aporte o sugerencia. Gracias!",
   },
   en: {
     contact: "Contact",
     name: "Name",
+    lastName: "Last Name",
+    country: "Country",
+    state: "State or Province",
+    municipality: "Municipality",
     email: "Email",
     message: "Message",
     send: "Send",
@@ -66,8 +76,11 @@ const translations = {
       shareInstagram: "Share on Instagram",
       share: "Share",
     },
+    placeholderMessage:
+      "Please include the place you would like us to evaluate for a visit or your message with contributions or suggestions. Thank you!",
   },
 };
+
 
 const ContactForm = ({ language }) => {
   const t = translations[language];
@@ -109,20 +122,53 @@ const ContactForm = ({ language }) => {
         <div className="col-lg-8 mt-5" data-aos="fade-up">
           <h2 className="text-center-contact mb-4">{t.contact}</h2>
           <form ref={formRef} onSubmit={sendEmail} className="mt-4">
-            <div className="mb-3">
-              <label className="form-label">{t.name}</label>
-              <input type="text" name="from_name" className="form-control" required />
+            <div className="row mb-3">
+              <div className="col-md-6">
+                <label className="form-label">{t.name}</label>
+                <input type="text" name="from_name" className="form-control" required />
+              </div>
+              <div className="col-md-6">
+                <label className="form-label">{t.lastName}</label>
+                <input type="text" name="from_lastname" className="form-control" required />
+              </div>
             </div>
-            <div className="mb-3">
-              <label className="form-label">{t.email}</label>
-              <input type="email" name="from_email" className="form-control" required />
+
+            <div className="row mb-3">
+              <div className="col-md-6">
+                <label className="form-label">{t.email}</label>
+                <input type="email" name="from_email" className="form-control" required />
+              </div>
+              <div className="col-md-6">
+                <label className="form-label">{t.country}</label>
+                <input type="text" name="country" className="form-control" required />
+              </div>
             </div>
+
+            <div className="row mb-3">
+              <div className="col-md-6">
+                <label className="form-label">{t.state}</label>
+                <input type="text" name="state" className="form-control" required />
+              </div>
+              <div className="col-md-6">
+                <label className="form-label">{t.municipality}</label>
+                <input type="text" name="municipality" className="form-control" required />
+              </div>
+            </div>
+
             <div className="mb-3">
               <label className="form-label">{t.message}</label>
-              <textarea name="message" className="form-control" rows="4" required></textarea>
+              <textarea 
+                name="message" 
+                className="form-control" 
+                rows="4" 
+                required 
+                placeholder={t.placeholderMessage}
+              ></textarea>
             </div>
+
             <button type="submit" className="btn btn-contact w-100">{t.send}</button>
           </form>
+
           <div className="mt-3">
             <button className="btn btn-contact" onClick={handleBackClick}>
             {t.back}

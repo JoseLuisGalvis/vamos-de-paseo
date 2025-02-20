@@ -15,6 +15,7 @@ const translations = {
       subtitle: "Vamos de Paseo con Yrsa Bello",
       description: "Descubre nuevos lugares, culturas y experiencias a través de los ojos de Yrsa Bello. Nuestro canal está dedicado a compartir aventuras auténticas, consejos de viaje y mostrar la belleza de destinos únicos alrededor del mundo.",
       buttonText: "Ver más videos",
+      back: "Volver al Inicio",
     },
     profile: {
       name: "Yrsa Bello",
@@ -42,6 +43,7 @@ const translations = {
       subtitle: "Let's Go for a Walk with Yrsa Bello",
       description: "Discover new places, cultures, and experiences through Yrsa Bello's eyes. Our channel is dedicated to sharing authentic adventures, travel tips, and showcasing the beauty of unique destinations around the world.",
       buttonText: "Watch more videos",
+      back: "Back to Home",
     },
     profile: {
       name: "Yrsa Bello",
@@ -74,6 +76,10 @@ export const AboutSection = ({ language }) => {
       once: false, // Esto hace que las animaciones se activen cada vez que se hace scroll
     });
   }, []);
+
+  const handleBackClick = () => {
+    window.location.href = "/";
+  };
 
   return (
     <section id="about" className="container d-flex align-items-center min-vh-100 py-5 bg-light">
@@ -110,15 +116,18 @@ export const AboutSection = ({ language }) => {
               <span className="stat-label">{t.stats.views}</span>
             </div>
           </div>
-          <a href="https://www.youtube.com/@YrsaBello" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3">
+          <a href="https://www.youtube.com/@YrsaBello" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 margin-right">
             {t.section1.buttonText} <FaYoutube className="icon" />
           </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 mx-2" aria-label="Facebook">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 margin-right" aria-label="Facebook">
             <FaFacebookF />
           </a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3" aria-label="Instagram">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk margin-right mt-3" aria-label="Instagram">
             <FaInstagram />
           </a>
+          <button className="btn btn-contact mt-3" onClick={handleBackClick}>
+            {t.section1.back}
+          </button>
         </div>
 
         {/* Aside con Cards - Ocupa 4 columnas en pantallas grandes */}

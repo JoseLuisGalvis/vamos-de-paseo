@@ -20,7 +20,8 @@ const translations = {
         "Contenido exclusivo para la comunidad",
         "Posibilidad de influir en futuros destinos",
         "Participación en sorteos y eventos especiales"
-      ]
+      ],
+      back: "Volver al Inicio",
     }
   },
   en: {
@@ -36,7 +37,8 @@ const translations = {
         "Exclusive community content",
         "Influence on future destinations",
         "Participation in giveaways and special events"
-      ]
+      ],
+      back: "Back to Home",
     }
   }
 };
@@ -55,14 +57,26 @@ const CommunitySection = ({ language }) => {
     window.open('https://www.youtube.com/@YrsaBello/community', '_blank');
   };
 
+  const handleBackClick = () => {
+    window.location.href = "/";
+  };
+
   return (
     <section id="community" className="youtube-community-section container py-5">
       <div className="row justify-content-center">
         <div className="col-lg-8 text-center mt-3" data-aos="fade-up">
-          <FaYoutube className="youtube-icon-hero" />
-          <h2 className="section-title-youtube mb-1">{t.section4.title}</h2>
-          <h4 className="section-subtitle-youtube mb-2">{t.section4.subtitle}</h4>
-          
+          <div className="d-flex justify-content-center align-items-center position-relative">
+            <FaYoutube className="youtube-icon-hero" />
+            <button 
+              className="btn btn-contact position-absolute" 
+              onClick={handleBackClick}
+              style={{ right: 0 }}
+            >
+              {t.section4.back}
+            </button>
+          </div>
+          <h3 className="section-title-youtube mb-1">{t.section4.title}</h3>
+          <h5 className="section-subtitle-youtube mb-2">{t.section4.subtitle}</h5>
           <div className="youtube-card p-3 mb-1">
             <p className="youtube-description">{t.section4.description}</p>
             
