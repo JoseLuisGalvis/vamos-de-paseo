@@ -30,3 +30,20 @@ p {
   background-color: var(--accent-light) !important;
   color: var(--blanco) !important;
 }
+
+.ad-image {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 1em;
+  transform: scale(0.9) !important; /* Reduce la imagen al 90% */
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.ad-image:hover {
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.5); /* Efecto de sombra */
+  transform: translateZ(50px); /* Movimiento en el eje Z */
+}

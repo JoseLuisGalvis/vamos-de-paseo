@@ -160,7 +160,7 @@ export const LatestVideoSection = ({ language }) => {
           <img 
             src={aviso1} 
             alt="Yrsa Bello" 
-            className="img-fluid image-latest"
+            className="img-fluid ad-image"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Yrsa+Bello";
@@ -174,7 +174,7 @@ export const LatestVideoSection = ({ language }) => {
           <img 
             src={aviso1} 
             alt="Yrsa Bello" 
-            className="img-fluid image-latest"
+            className="img-fluid ad-image"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Yrsa+Bello";
