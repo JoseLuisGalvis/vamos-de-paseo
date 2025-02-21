@@ -7,6 +7,13 @@
     var(--accent-dark)
   ) !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.navbar .container {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
 }
 
 .navbar-brand {
@@ -108,29 +115,114 @@ body.dark-mode .dropdown-item:hover {
     padding-right: 1.5rem; /* Espacio para el ícono del dropdown */
   }
 
-  .navbar-title {
+  .navbar-brand {
     font-size: 1.3rem;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1199.9px) {
-  .navbar .btn {
-    font-size: 0.7rem;
-    padding: 0.375rem 0.4rem;
-  }
-
-  .navbar .dropdown-toggle {
-    padding-right: 1.5rem; /* Espacio para el ícono del dropdown */
-  }
-
-  .navbar-title {
-    font-size: 1.3rem;
+/* Ajustes específicos para pantallas muy pequeñas */
+@media (max-width: 320px) {
+  .navbar.fixed-top .navbar-collapse {
+    padding: 0.5rem;
   }
 }
 
-/* Media queries */
-@media (max-width: 991.9px) {
-  .navbar-title {
+/********************   Responsive   **************************/
+
+@media (max-width: 320px) {
+  .navbar {
+    padding: 0.25rem !important;
+  }
+
+  .navbar .container {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .navbar-brand {
+    font-size: 0.7em;
+    margin-right: 0.25em;
+  }
+
+  .navbar-brand img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.25rem;
+  }
+
+  .navbar-toggler {
+    padding: 0.2rem;
+    margin-left: 0.25rem;
+    font-size: 1rem;
+  }
+
+  /* Asegurar que el menú desplegable ocupe todo el ancho */
+  .navbar-collapse {
+    width: 100%;
+    background: var(--primary-dark);
+  }
+
+  /* Ajustar el espacio para los botones */
+  .d-flex.flex-lg-row {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 320.1px) and (max-width: 576px) {
+  .navbar {
+    padding: 0.5rem !important;
+  }
+
+  .navbar .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+  }
+
+  .navbar-brand {
+    font-size: 0.9rem;
+    white-space: normal;
+    max-width: calc(100% - 60px); /* Dejar espacio para el toggler */
+    line-height: 1.2;
+  }
+
+  .navbar-brand img {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    margin-left: auto;
+  }
+
+  /* Asegurar que el menú desplegable se muestre correctamente */
+  .navbar-collapse {
+    background: var(--primary-dark);
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+  }
+
+  .d-flex.flex-lg-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+  }
+
+  .btn-secondary {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 576.1px) and (max-width: 991.9px) {
+  .navbar-brand {
     font-size: 1.2rem;
   }
 
@@ -146,6 +238,21 @@ body.dark-mode .dropdown-item:hover {
   .btn-secondary {
     padding: 0.3rem 0.5rem;
     font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.9px) {
+  .navbar .btn {
+    font-size: 0.7rem;
+    padding: 0.375rem 0.4rem;
+  }
+
+  .navbar .dropdown-toggle {
+    padding-right: 1.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.3rem;
   }
 }
 

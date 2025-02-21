@@ -8,6 +8,8 @@ import CommunitySection from "./components/CommunitySection";
 import ContactForm from "./components/ContactForm";
 import MapComponent from "./components/MapComponent";
 import Footer from "./components/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
 
 // Importamos los archivos de medios

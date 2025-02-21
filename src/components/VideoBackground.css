@@ -99,3 +99,25 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/************   Responsive   ****************/
+
+@media (max-width: 320px) {
+  .video-overlay {
+    padding-left: 0 !important;
+  }
+
+  .video-title-video {
+    font-size: 1.8em !important;
+  }
+
+  .author-info {
+    font-size: 0.8em;
+  }
+
+  .youtube-link {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+  }
+}

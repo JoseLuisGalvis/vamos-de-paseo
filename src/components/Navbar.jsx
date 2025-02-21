@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import logo from '../assets/images/logo.jpeg'; // Asegúrate de agregar un logo en la carpeta assets
+import logo from '../assets/images/logo.jpeg';
 import './Navbar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const translations = {
   es: {
@@ -36,7 +37,21 @@ const translations = {
 };
 
 const Navbar = ({ language, toggleLanguage }) => {
-  const [darkMode, setDarkMode, isScrolled, setIsScrolled] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    setDarkMode(savedDarkMode);
+    if (savedDarkMode) document.body.classList.add("dark-mode");
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleDarkMode = () => {
     const newDarkMode = !darkMode;
@@ -45,22 +60,14 @@ const Navbar = ({ language, toggleLanguage }) => {
     localStorage.setItem("darkMode", newDarkMode);
   };
 
-  useEffect(() => {
-    const savedDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(savedDarkMode);
-    if (savedDarkMode) document.body.classList.add("dark-mode");
-  }, [setDarkMode]);
+  const handleNavClick = () => {
+    if (window.innerWidth < 992) {
+      const navbarToggler = document.querySelector('.navbar-toggler');
+      if (navbarToggler) navbarToggler.click(); // Cierra el menú al hacer clic en un enlace
+    }
+  };
 
   const t = translations[language];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-  
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [setIsScrolled]);
 
   return (
     <nav className={`navbar navbar-expand-lg navbar-dark bg-dark fixed-top ${isScrolled ? "navbar-shrink" : ""}`}>
@@ -81,7 +88,7 @@ const Navbar = ({ language, toggleLanguage }) => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav" onClick={handleNavClick}>
             <li className="nav-item"><a className="nav-link" href="#">{t.inicio}</a></li>
             <li className="nav-item"><a className="nav-link" href="#about">{t.destinos}</a></li>
             <li className="nav-item"><a className="nav-link" href="#latest-video">{t.experiencias}</a></li>

@@ -7,7 +7,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import aviso1 from '../assets/images/EspacioDisponible.png';
 
-
 const translations = {
   es: {
     section1: {
@@ -96,27 +95,28 @@ const translations = {
 export const FeaturedDestinationsSection = ({ language }) => {
   const t = translations[language] || translations.es;
 
-      useEffect(() => {
-        AOS.init({
-          duration: 3000,
-          once: false, // Esto hace que las animaciones se activen cada vez que se hace scroll
-        });
-      }, []);
+  useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      once: false,
+    });
+  }, []);
 
-      const handleBackClick = () => {
-        window.location.href = "/";
-      };
+  const handleBackClick = () => {
+    window.location.href = "/";
+  };
   
   return (
       <section id="playlist" className="container d-flex align-items-center min-vh-100 bg-light">
         <div className="row g-4 mt-5">        
           {/* Playlist destacada */}
-          <div className="col-lg-8 d-flex flex-column mt-5 style-column" data-aos="fade-down">
+          <div className="col-12 col-lg-8" data-aos="fade-down">
             <div className="card playlist-card">
               <div className="card-body">
                 <h5 className="card-title-playlist">{t.playlist.title}</h5>
                 <ul className="video-list">
                   <li className="video-item">
+                  <div className="video-thumbnail">
                     <a href="https://www.youtube.com/watch?v=G8OMPvjBehg" className="video-link d-block">
                       <div className="video-thumbnail">
                         <iframe 
@@ -134,8 +134,10 @@ export const FeaturedDestinationsSection = ({ language }) => {
                         <p className="video-stats-playlist">2.5K {t.playlist.views} • {t.playlist.timeAgo}</p>
                       </div>
                     </a>
+                    </div>
                   </li>
                   <li className="video-item">
+                  <div className="video-thumbnail">
                     <a href="https://www.youtube.com/watch?v=ESo9JA_LG6I" className="video-link d-block">
                       <div className="video-thumbnail">
                         <iframe 
@@ -153,11 +155,13 @@ export const FeaturedDestinationsSection = ({ language }) => {
                         <p className="video-stats-playlist">2.5K {t.playlist.views} • {t.playlist.timeAgo}</p>
                       </div>
                     </a>
+                    </div>
                   </li>
                 </ul>
                 <a href="https://www.youtube.com/@YrsaBello/playlists" className="card-link-playlist text-decoration-none margin-right">
                   {t.playlist.seeAllPlaylists}
                 </a>
+                <div className="btn-container">
                 <a
                   href="https://www.youtube.com/@YrsaBello?sub_confirmation=1"
                   target="_blank"
@@ -175,39 +179,40 @@ export const FeaturedDestinationsSection = ({ language }) => {
                 <button className="btn btn-contact" onClick={handleBackClick}>
                   {t.playlist.back}
                 </button>
+                </div>
               </div>
             </div>
           </div>
-          {/* Aside con Cards - Ocupa 4 columnas en pantallas grandes */}
-          <aside className="col-lg-4 d-flex flex-column ">
-            <div className="card mb-1 min-vh-50 mt-4">
-              <div className="card-body">
-            <img 
-              src={aviso1} 
-              alt="Yrsa Bello" 
-              className="img-fluid ad-image"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Yrsa+Bello";
-              }}
-            />
-              </div>
-            </div>
-  
-            <div className="card min-vh-50">
-              <div className="card-body">
-            <img 
-              src={aviso1} 
-              alt="Yrsa Bello" 
-              className="img-fluid ad-image"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Yrsa+Bello";
-              }}
-            />
-              </div>
-            </div>
-          </aside>
+{/* Aside */}
+<aside className="col-12 col-lg-4">
+      <div className="card mb-3">
+        <div className="card-body p-2">
+          <img
+            src={aviso1}
+            alt="Advertisement"
+            className="img-fluid ad-image"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Advertisement";
+            }}
+          />
+        </div>
+      </div>
+
+      <div className="card mb-3">
+        <div className="card-body p-2">
+          <img
+            src={aviso1}
+            alt="Advertisement"
+            className="img-fluid ad-image"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Advertisement";
+            }}
+          />
+        </div>
+      </div>
+    </aside>
         </div>
       </section>
     );

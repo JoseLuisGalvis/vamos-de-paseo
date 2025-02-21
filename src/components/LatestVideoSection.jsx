@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import 'react';
 import PropTypes from 'prop-types';
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import './LatestVideoSection.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import './LatestVideoSection.css'
 import aviso1 from '../assets/images/EspacioDisponible.png';
 
 const translations = {
@@ -109,15 +109,13 @@ export const LatestVideoSection = ({ language }) => {
   return (
     <section id="latest-video" className="container d-flex align-items-center min-vh-100 bg-light">
       <div className="row g-4 mt-5">
-          <div className="col-lg-8 mt-5" data-aos="fade-up">
+      <div className="col-12 col-lg-8" data-aos="fade-up">
               <h2 className="section-title-latest">{t.section2.title}</h2>
               <h3 className="section-subtitle">{t.section2.subtitle}</h3>
 
               {/* Contenedor del video */}
               <div className="video-container">
                 <iframe
-                  width="560"
-                  height="315"
                   src="https://www.youtube.com/embed/mNpIyfODpxg?si=u7b3JU-_mJQqGaKX"
                   title="YouTube video player"
                   frameBorder="0"
@@ -129,60 +127,60 @@ export const LatestVideoSection = ({ language }) => {
 
               {/* Contenedor en una fila para distribuir columnas */}
               <div className="row">
-                <div className="col-lg-8">
+                <div className="col-12">
                   <p className="section-description mt-3">{t.section2.description}</p>
                 </div>
               </div>
-
-              <a
-                href="https://www.youtube.com/@YrsaBello?sub_confirmation=1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-walk cta-button mt-3 margin-right"
-              >
-                {t.section2.buttonText} <FaYoutube className="icon" />
-              </a>
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 margin-right" aria-label="Facebook">
-                <FaFacebookF />
-              </a>
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 margin-right" aria-label="Instagram">
-                <FaInstagram />
-              </a>
-              <button className="btn btn-contact mt-3" onClick={handleBackClick}>
-                {t.section2.back}
-              </button>
+              <div className="d-flex flex-column flex-sm-row">
+                  <a
+                    href="https://www.youtube.com/@YrsaBello?sub_confirmation=1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-walk cta-button mt-3 margin-right"
+                  >
+                    {t.section2.buttonText} <FaYoutube className="icon" />
+                  </a>
+                  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 margin-right" aria-label="Facebook">
+                    <FaFacebookF />
+                  </a>
+                  <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="btn btn-walk mt-3 margin-right" aria-label="Instagram">
+                    <FaInstagram />
+                  </a>
+                  <button className="btn btn-contact mt-3" onClick={handleBackClick}>
+                    {t.section2.back}
+                  </button>
+              </div>
         </div>
-
         {/* Aside con Cards - Ocupa 4 columnas en pantallas grandes */}
-        <aside className="col-lg-4 d-flex flex-column ">
-          <div className="card mb-1 min-vh-50 mt-4">
-            <div className="card-body">
-          <img 
-            src={aviso1} 
-            alt="Yrsa Bello" 
+        <aside className="col-12 col-lg-4">
+      <div className="card mb-3">
+        <div className="card-body p-2">
+          <img
+            src={aviso1}
+            alt="Advertisement"
             className="img-fluid ad-image"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Yrsa+Bello";
+              e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Advertisement";
             }}
           />
-            </div>
-          </div>
+        </div>
+      </div>
 
-          <div className="card min-vh-50">
-            <div className="card-body">
-          <img 
-            src={aviso1} 
-            alt="Yrsa Bello" 
+      <div className="card mb-3">
+        <div className="card-body p-2">
+          <img
+            src={aviso1}
+            alt="Advertisement"
             className="img-fluid ad-image"
             onError={(e) => {
               e.target.onerror = null;
-              e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Yrsa+Bello";
+              e.target.src = "https://placehold.co/300x300/e83e8c/FFFFFF?text=Advertisement";
             }}
           />
-            </div>
-          </div>
-        </aside>
+        </div>
+      </div>
+    </aside>
       </div>
     </section>
   );

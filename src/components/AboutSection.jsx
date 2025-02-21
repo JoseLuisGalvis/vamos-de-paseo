@@ -85,7 +85,7 @@ export const AboutSection = ({ language }) => {
     <section id="about" className="container d-flex align-items-center min-vh-100 py-5 bg-light">
       <div className="row g-4 align-items-center">
         {/* Imagen - Ocupa 3 columnas */}
-        <div className="col-lg-4  text-center" data-aos="fade-up">
+        <div className="col-12 col-sm-12 col-lg-4 text-center" data-aos="fade-up">
           <img
             src={yb}
             alt="Yrsa Bello"
@@ -98,7 +98,7 @@ export const AboutSection = ({ language }) => {
         </div>
 
         {/* Contenido Principal - Ocupa 6 columnas */}
-        <div className="col-lg-4" data-aos="fade-down">
+        <div className="col-12 col-sm-12 col-lg-4" data-aos="fade-down">
           <h2 className="section-title-about">{t.section1.title}</h2>
           <h3 className="section-subtitle">{t.section1.subtitle}</h3>
           <p className="section-description">{t.section1.description}</p>
@@ -131,7 +131,7 @@ export const AboutSection = ({ language }) => {
         </div>
 
         {/* Aside con Cards - Ocupa 4 columnas en pantallas grandes */}
-        <aside className="col-lg-4 d-flex flex-column" data-aos="fade-up">
+        <aside className="col-12 col-sm-12 col-lg-4" data-aos="fade-up">
           <div className="card mb-1 min-vh-50 mt-4">
             <div className="card-body">
               <img
